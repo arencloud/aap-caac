@@ -1,0 +1,11 @@
+---
+- name: Organization configuration generator
+  ansible.builtin.template:
+    src: org.yml.j2
+    dest: "configuration/{{ group }}/org.yml"
+    mode: '06444'
+- name: Credentials configuration generator
+  ansible.builtin.template:
+    src: credential.yml.j2
+    dest: "configuration/{{ group }}/credential.yml"
+    mode: '06444'

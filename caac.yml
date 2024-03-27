@@ -1,0 +1,24 @@
+---
+- name: AAP configuration generator
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  roles:
+    - role: configen
+
+- name: Ansible Automation Platform Configuration
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  pre_tasks:
+    - name: Include vars from controller_configs directory
+      ansible.builtin.include_vars:
+        dir: "configuration/{{ group }}"
+        ignore_files: [readme.md]
+        extensions: ["yml"]
+    - name: print vars
+      ansible.builtin.debug:
+        msg: "{{ controller_credentials }}"
+  roles:
+    - {role: infra.controller_configuration.organizations, when: controller_organizations is defined}
+    - {role: infra.controller_configuration.credentials, when: controller_credentials is defined}
