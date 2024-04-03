@@ -1,5 +1,12 @@
 # Ansible Automation Platform Configuration as a Code
 
+### Mandatory variables to connect to AAP controller
+| Variable               |  Type  | Description                                             | Mandatory |
+|:-----------------------|:------:|:--------------------------------------------------------|:---------:|
+| controller_hostname    | STRING | URL to the Ansible Controller Server.                   |    YES    |
+| controller_username    | STRING | Admin User on the Ansible Controller Server.            |    YES    |
+| controller_password    | STRING | Organization information                                |    YES    |
+
 ### Required variables to run playbook
 | Variable                                   |  Type  | Description                                             | Mandatory |
 |:-------------------------------------------|:------:|:--------------------------------------------------------|:---------:|
