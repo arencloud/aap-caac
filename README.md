@@ -68,6 +68,10 @@ machine_credentials_become_password:
 # add below lines into caac.yml
 vars_files:
   - input.yml
+vars:
+  - controller_hostname: controller.demo.com
+  - controller_username: 'demo'
+  - controller_password: 'demo123'
 
 # run
 ansible-playbook caac.yaml --ask-vault-password
