@@ -22,3 +22,4 @@
   roles:
     - {role: infra.controller_configuration.organizations, when: controller_organizations is defined}
     - {role: infra.controller_configuration.credentials, when: controller_credentials is defined}
+    - {role: infra.controller_configuration.teams, when: controller_teams is defined}

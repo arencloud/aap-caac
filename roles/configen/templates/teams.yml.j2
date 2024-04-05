@@ -1,0 +1,5 @@
+controller_teams:
+  - name: {{ team_name }}
+    description: {{ team_description }}
+    organization: {{ org_name }}
+    state: {{ team_state|default('present') }}

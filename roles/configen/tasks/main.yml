@@ -9,3 +9,7 @@
     src: credential.yml.j2
     dest: "configuration/{{ group }}/credential.yml"
     mode: '06444'
+- name: Teams configuration generator
+  ansible.builtin.template:
+    src: teams.yml.j2
+    dest: "configuration/{{ group }}/teams.yml"
